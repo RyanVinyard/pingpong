@@ -43,5 +43,3 @@ $(document).ready(function() {
     }
   });
 });
-
-// THIS IS THE GOOD ONE QUIT HITTING ALT Z NOW
