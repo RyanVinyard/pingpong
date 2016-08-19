@@ -9,17 +9,22 @@
   </head>
   <body>
     <div class="container">
+      <div class="jumbotron">
       <h1>Ping! Pong! Pingpong!</h1>
       <h2>Let's play a game! Enter any whole integer you choose in the form below, and see what happens!</h2>
+      </div>
       <form id="input">
         <div class="form-group">
           <label for="userInput">Try not to make it TOO large!</label>
           <input id="userInput" class="form-control" type="number" required placeholder="I'm waiting...">
         </div>
-        <button type="submit" class="btn btn-success">Let's go!</button>
+        <button type="submit" class="btn btn-info">Let's go!</button>
       </form>
         <ul class="output">
         </ul>
+      <h3 id="descriptor">Can you see what the pattern of this list is? Try entering some different numbers to figure it out.</h3>
+      <h4 id="riddleAnswer">If you guessed that numbers divisible by 3 are replaced with "ping!" Numbers divisible by 5 are replaced with "pong!" And numbers divisible by both 3 and 5 are replaced with "pingpong!" Then you are correct!</h4>
+
     </div>
   </body>
 </html>
