@@ -1,15 +1,7 @@
 //Back end logic
 $(document).ready(function() {
   var userInput = $("input#userInput").val();
-
   parseInt(userInput);
-
-
-
-
-
-
-
 
 //Front end logic
 $(document).ready(function() {
@@ -19,11 +11,19 @@ $(document).ready(function() {
     var array = [];
     for (i = 1; i <= userInput; i++) {
 
-      array.push(i + " ");
+      if (i % 3 === 0 && i % 5 != 0) {
+        array.push("ping!" + " ");
+      }
+      else if (i % 5 === 0 && i % 3 != 0) {
+        array.push("pong!" + " ");
+      }
+      else if (i % 5 === 0 && i % 3 === 0) {
+        array.push("pingpong!" + " ");
+      }
+      else {array.push(i + " ");}
     }
-    cleanArray = array.join(" ")
+    var cleanArray = array.join(" ")
     $(".output").text(cleanArray);
-    console.log(cleanArray);
 
   });
   });
