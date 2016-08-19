@@ -1,31 +1,45 @@
 //Back end logic
-$(document).ready(function() {
+
   var userInput = $("input#userInput").val();
   parseInt(userInput);
+  var numberArray1 = [];
+  var numberArray = function(userInput) {
+
+
+
+
+    for (i = 1; i <= userInput; i++) {
+
+      if (i % 3 === 0 && i % 5 != 0) {
+        numberArray1.push("ping!");
+      }
+      else if (i % 5 === 0 && i % 3 != 0) {
+        numberArray1.push("pong!");
+      }
+      else if (i % 5 === 0 && i % 3 === 0) {
+        numberArray1.push("pingpong!");
+      }
+      else {
+        numberArray1.push(i);
+      } 
+  }
+}
 
 //Front end logic
 $(document).ready(function() {
   $("form#input").submit(function(event) {
-    var userInput = $("input#userInput").val();
+
     event.preventDefault();
-    var array = [];
-    for (i = 1; i <= userInput; i++) {
+    var userInput = $("input#userInput").val();
 
-      if (i % 3 === 0 && i % 5 != 0) {
-        array.push("ping!" + " ");
-      }
-      else if (i % 5 === 0 && i % 3 != 0) {
-        array.push("pong!" + " ");
-      }
-      else if (i % 5 === 0 && i % 3 === 0) {
-        array.push("pingpong!" + " ");
-      }
-      else {array.push(i + " ");}
+    numberArray(userInput);
+
+
+    for (i = numberArray1.length-1; i >= 0; i--) {
+
+    $("ul#output").prepend('<li>' + numberArray1[i] + '</li>');
     }
-    var cleanArray = array.join(" ")
-    $(".output").text(cleanArray);
-
   });
-  });
-
 });
+
+// THIS IS THE GOOD ONE QUIT HITTING ALT Z NOW
